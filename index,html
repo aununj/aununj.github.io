@@ -6,10 +6,6 @@
 <title>Aununj — Ruang Belajar</title>
 <meta name="description" content="Kumpulan link pembelajaran coding &amp; IPAS untuk siswa, dikurasi oleh Aununj." />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-
 <style>
   :root{
     --bg-deep:#160A2B;
@@ -30,14 +26,14 @@
     margin:0;
     background:var(--bg-deep);
     color:var(--ink);
-    font-family:'Plus Jakarta Sans', sans-serif;
+    font-family:-apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
   #root{position:relative; min-height:100vh;}
 
-  .display{font-family:'Space Grotesk', sans-serif;}
-  .mono{font-family:'JetBrains Mono', monospace;}
+  .display{font-family:"Segoe UI", -apple-system, Roboto, Arial, sans-serif; letter-spacing:-0.02em;}
+  .mono{font-family:"SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;}
 
   /* ---------- AURORA / SIGNATURE BACKGROUND ---------- */
   .aurora{
@@ -68,7 +64,7 @@
   .hero{padding:88px 0 56px; text-align:center;}
   .badge{
     display:inline-flex; align-items:center; gap:8px;
-    font-family:'JetBrains Mono', monospace; font-size:12.5px; letter-spacing:.04em;
+    font-family:"SFMono-Regular", Consolas, Menlo, monospace; font-size:12.5px; letter-spacing:.04em;
     color:var(--lime); background:rgba(163,230,53,0.08);
     border:1px solid rgba(163,230,53,0.25); padding:6px 14px; border-radius:999px;
     margin-bottom:28px;
@@ -85,7 +81,7 @@
     line-height:1.6;
   }
   .hero .role{
-    display:block; margin-top:10px; font-family:'JetBrains Mono', monospace;
+    display:block; margin-top:10px; font-family:"SFMono-Regular", Consolas, Menlo, monospace;
     font-size:13px; color:var(--purple-light); letter-spacing:.03em;
   }
 
@@ -95,7 +91,7 @@
     margin:40px 0 8px;
   }
   .chip{
-    font-family:'JetBrains Mono', monospace; font-size:13px;
+    font-family:"SFMono-Regular", Consolas, Menlo, monospace; font-size:13px;
     padding:9px 18px; border-radius:999px; cursor:pointer;
     background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10);
     color:var(--muted); transition:all .2s ease; user-select:none;
@@ -114,10 +110,10 @@
     display:flex; align-items:baseline; gap:14px; margin-bottom:22px;
   }
   .category-head .num{
-    font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--green);
+    font-family:"SFMono-Regular", Consolas, Menlo, monospace; font-size:13px; color:var(--green);
   }
   .category-head h2{
-    font-family:'Space Grotesk', sans-serif; font-size:22px; font-weight:600;
+    font-family:"Segoe UI", -apple-system, Roboto, Arial, sans-serif; font-size:22px; font-weight:600;
     margin:0; letter-spacing:-0.01em;
   }
   .category-head .line{flex:1; height:1px; background:linear-gradient(90deg, rgba(255,255,255,0.16), transparent);}
@@ -148,7 +144,7 @@
   .card-top{display:flex; align-items:center; justify-content:space-between; position:relative; z-index:1;}
   .card-icon{
     width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center;
-    font-size:18px; font-weight:700; font-family:'Space Grotesk', sans-serif;
+    font-size:18px; font-weight:700; font-family:"Segoe UI", -apple-system, Roboto, Arial, sans-serif;
     background:linear-gradient(135deg, var(--purple), var(--green)); color:#fff;
     flex-shrink:0;
   }
@@ -158,7 +154,7 @@
   .card:hover .card-arrow{ transform:translate(3px,-3px); color:var(--lime); }
 
   .card h3{
-    font-family:'Space Grotesk', sans-serif; font-size:17px; font-weight:600;
+    font-family:"Segoe UI", -apple-system, Roboto, Arial, sans-serif; font-size:17px; font-weight:600;
     margin:0; position:relative; z-index:1; line-height:1.3;
   }
   .card p{
@@ -167,7 +163,7 @@
 
   .empty{
     text-align:center; padding:60px 20px; color:var(--muted);
-    font-family:'JetBrains Mono', monospace; font-size:14px;
+    font-family:"SFMono-Regular", Consolas, Menlo, monospace; font-size:14px;
   }
 
   /* ---------- FOOTER ---------- */
@@ -176,7 +172,7 @@
     padding:36px 24px; text-align:center;
   }
   footer p{
-    margin:0; font-size:13px; color:var(--muted); font-family:'JetBrains Mono', monospace;
+    margin:0; font-size:13px; color:var(--muted); font-family:"SFMono-Regular", Consolas, Menlo, monospace;
   }
   footer .heart{color:var(--lime);}
 
@@ -232,97 +228,141 @@
   ];
 </script>
 
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+<script>
+(function () {
+  "use strict";
 
-<script type="text/babel" data-presets="react">
-const { useState, useMemo } = React;
+  var links = window.AUNUNJ_LINKS || [];
+  var activeCategory = "Semua";
 
-function groupByCategory(links) {
-  const map = new Map();
-  links.forEach(link => {
-    if (!map.has(link.category)) map.set(link.category, []);
-    map.get(link.category).push(link);
+  function escapeHtml(str) {
+    var div = document.createElement("div");
+    div.textContent = str == null ? "" : String(str);
+    return div.innerHTML;
+  }
+
+  function groupByCategory(list) {
+    var map = [];
+    var index = {};
+    list.forEach(function (link) {
+      if (!(link.category in index)) {
+        index[link.category] = map.length;
+        map.push({ category: link.category, items: [] });
+      }
+      map[index[link.category]].items.push(link);
+    });
+    return map;
+  }
+
+  function renderChips(root) {
+    var categories = ["Semua"];
+    links.forEach(function (l) {
+      if (categories.indexOf(l.category) === -1) categories.push(l.category);
+    });
+
+    var nav = document.createElement("nav");
+    nav.className = "chips";
+    nav.setAttribute("aria-label", "Filter kategori");
+
+    categories.forEach(function (cat) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "chip" + (cat === activeCategory ? " active" : "");
+      btn.textContent = cat;
+      btn.addEventListener("click", function () {
+        activeCategory = cat;
+        render(root);
+      });
+      nav.appendChild(btn);
+    });
+
+    return nav;
+  }
+
+  function renderMain() {
+    var main = document.createElement("main");
+    var filtered = activeCategory === "Semua"
+      ? links
+      : links.filter(function (l) { return l.category === activeCategory; });
+
+    var grouped = groupByCategory(filtered);
+
+    if (grouped.length === 0) {
+      var empty = document.createElement("p");
+      empty.className = "empty";
+      empty.textContent = "Belum ada link di kategori ini.";
+      main.appendChild(empty);
+      return main;
+    }
+
+    grouped.forEach(function (group, idx) {
+      var block = document.createElement("div");
+      block.className = "category-block";
+
+      var head = document.createElement("div");
+      head.className = "category-head";
+      head.innerHTML =
+        '<span class="num mono">' + String(idx + 1).padStart(2, "0") + '</span>' +
+        '<h2 class="display">' + escapeHtml(group.category) + '</h2>' +
+        '<div class="line"></div>';
+      block.appendChild(head);
+
+      var grid = document.createElement("div");
+      grid.className = "grid";
+
+      group.items.forEach(function (link) {
+        var a = document.createElement("a");
+        a.className = "card";
+        a.href = link.url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.innerHTML =
+          '<div class="card-top">' +
+            '<div class="card-icon">' + escapeHtml(link.icon || (link.title ? link.title.charAt(0) : "?")) + '</div>' +
+            '<span class="card-arrow">↗</span>' +
+          '</div>' +
+          '<h3>' + escapeHtml(link.title) + '</h3>' +
+          '<p>' + escapeHtml(link.desc) + '</p>';
+        grid.appendChild(a);
+      });
+
+      block.appendChild(grid);
+      main.appendChild(block);
+    });
+
+    return main;
+  }
+
+  function render(root) {
+    root.innerHTML = "";
+
+    var wrap = document.createElement("div");
+    wrap.className = "wrap";
+
+    var hero = document.createElement("section");
+    hero.className = "hero";
+    hero.innerHTML =
+      '<span class="badge"><span class="dot"></span>RUANG BELAJAR AKTIF</span>' +
+      '<h1 class="display">Aununj</h1>' +
+      '<p class="lead">Kumpulan link pembelajaran pilihan — coding, IPAS, dan sumber ' +
+      'belajar lain — disusun rapi supaya kamu tinggal klik dan mulai.' +
+      '<span class="role">dikurasi oleh seorang guru</span></p>';
+
+    hero.appendChild(renderChips(root));
+    wrap.appendChild(hero);
+    wrap.appendChild(renderMain());
+    root.appendChild(wrap);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var root = document.getElementById("root");
+    render(root);
+
+    var footer = document.createElement("footer");
+    footer.innerHTML = '<p>dibuat dengan <span class="heart">♥</span> oleh Aununj — ' + new Date().getFullYear() + '</p>';
+    root.parentNode.appendChild(footer);
   });
-  return map;
-}
-
-function LinkCard({ link }) {
-  return (
-    <a className="card" href={link.url} target="_blank" rel="noopener noreferrer">
-      <div className="card-top">
-        <div className="card-icon">{link.icon || link.title.charAt(0)}</div>
-        <span className="card-arrow">↗</span>
-      </div>
-      <h3>{link.title}</h3>
-      <p>{link.desc}</p>
-    </a>
-  );
-}
-
-function App() {
-  const links = window.AUNUNJ_LINKS || [];
-  const categories = useMemo(() => ["Semua", ...Array.from(new Set(links.map(l => l.category)))], [links]);
-  const [active, setActive] = useState("Semua");
-
-  const filtered = active === "Semua" ? links : links.filter(l => l.category === active);
-  const grouped = groupByCategory(filtered);
-
-  return (
-    <React.Fragment>
-      <div className="wrap">
-        <section className="hero">
-          <span className="badge"><span className="dot"></span>RUANG BELAJAR AKTIF</span>
-          <h1 className="display">Aununj</h1>
-          <p className="lead">
-            Kumpulan link pembelajaran pilihan — coding, IPAS, dan sumber
-            belajar lain — disusun rapi supaya kamu tinggal klik dan mulai.
-            <span className="role">dikurasi oleh seorang guru</span>
-          </p>
-
-          <nav className="chips" aria-label="Filter kategori">
-            {categories.map(cat => (
-              <button
-                key={cat}
-                className={"chip" + (active === cat ? " active" : "")}
-                onClick={() => setActive(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </nav>
-        </section>
-
-        <main>
-          {grouped.size === 0 && (
-            <p className="empty">Belum ada link di kategori ini.</p>
-          )}
-          {Array.from(grouped.entries()).map(([category, items], idx) => (
-            <div className="category-block" key={category}>
-              <div className="category-head">
-                <span className="num mono">{String(idx + 1).padStart(2, "0")}</span>
-                <h2 className="display">{category}</h2>
-                <div className="line"></div>
-              </div>
-              <div className="grid">
-                {items.map((link, i) => (
-                  <LinkCard link={link} key={link.url + i} />
-                ))}
-              </div>
-            </div>
-          ))}
-        </main>
-      </div>
-
-      <footer>
-        <p>dibuat dengan <span className="heart">♥</span> oleh Aununj — {new Date().getFullYear()}</p>
-      </footer>
-    </React.Fragment>
-  );
-}
-
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+})();
 </script>
 
 </body>
